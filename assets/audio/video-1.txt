@@ -1,0 +1,23 @@
+﻿WEBVTT
+Kind: captions
+Source: Articulate Closed Captions Editor
+Source Version: 6.35.21017.0
+
+00:00:00.150 --> 00:00:04.171
+What is Autism Spectrum Disorder, or ASD? The World Health Organization 
+
+00:00:04.321 --> 00:00:08.768
+refers to ASD as a range of conditions characterized by social, communication 
+
+00:00:08.918 --> 00:00:12.921
+and behavioral challenges. ASD is known as a spectrum disorder because 
+
+00:00:13.071 --> 00:00:17.217
+the range and severity of the symptoms that an individual might experience vary widely from 
+
+00:00:17.367 --> 00:00:21.410
+person to person. Diagnosis of ASD is possible to detect in early 
+
+00:00:21.560 --> 00:00:25.704
+childhood, however symptoms tend to persists into adolescence and adulthood. 
+

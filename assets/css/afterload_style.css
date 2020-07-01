@@ -1,0 +1,167 @@
+/* Custom course Shell Css */
+form.fill_in_section button.fillinsubmit {
+    float: right!important;
+    margin-left: 5px!important;
+	background-color: #e9594a !important;
+	border: 0px none !important;
+	box-shadow: 0px 0px 0px 0px !important;
+	color: #fff!important;
+}
+.fill_in_section input {
+	margin: 4px 6px !important;
+    border-bottom: 2px solid #bbb !important;
+}
+@font-face {font-family: "Futura_Md_BT_Bold";
+  src: url("../fonts/futura_fonts/Futura_Md_BT_Bold.eot"); /* IE9*/
+  src: url("../fonts/futura_fonts/Futura_Md_BT_Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/futura_fonts/Futura_Md_BT_Bold.woff") format("woff"), /* chrome、firefox */
+  url("../fonts/futura_fonts/Futura_Md_BT_Bold.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../fonts/futura_fonts/Futura_Md_BT_Bold.svg#Futura Md BT Bold") format("svg"); /* iOS 4.1- */
+}
+
+body {
+    font-family: Futura_Md_BT_Bold !important;
+}
+
+#cust_waUyu1XQ6SzkoyoO1{
+	background-color: #e9594a !important;
+	border: 0px none !important;
+	box-shadow: 0px 0px 0px 0px !important;
+	color: #fff !important
+}
+.dropdown-menu{
+    width:165px;
+}
+.navigation_next_back, .navigation_exit_course{
+	position: absolute !important;
+	right:0px !important;
+	top:4px !important;	
+    z-index: 3 !important;	
+}
+.navigation_next_back{
+	right:53px !important;
+	top:0px !important;
+}
+.navigation_next_back > i, .navigation_exit_course > i{
+	font-size: 50px !important;	
+    padding: 1px 5px !important;	
+	cursor:pointer!important;	
+}
+.navigation_exit_course > i{
+	font-size: 41px !important;	
+}
+.disabledState {
+    pointer-events: none !important;
+    color: #c3c3c3 !important;
+}
+/* drag_drop .drop_area,.drop_area {	
+	position: relative !important;	
+    height: 40px !important;		
+    width: 84px !important;		
+    background: #fff !important;		
+    border-radius: 1px !important;		
+    margin-bottom: 5px !important;	
+    margin-right: 12px !important;	
+    border: dashed #7a7a7a !important;		
+}
+drag_drop .ques_text,.ques_text {	
+    max-width: 83px !important;		
+    width: auto !important;		
+    padding: 0px !important;		
+    height: 35px !important;		
+    margin: 0px !important;	
+}
+drag_drop .drag_area,.drag_area {	
+       position: relative !important;	
+    height: 40px !important;		
+    width: 84px !important;		
+    background: #d5d5d5;	
+    border-radius: 1px !important;	
+    font-size: 12px !important;		
+    border: 0px none !important;		
+    margin: 0px !important;	
+}	
+drag_drop .drag_area span,.drag_area span,	
+drag_drop .ques_text span,.ques_text span {	
+    text-overflow: ellipsis!important;		
+    overflow: hidden !important;		
+    white-space: nowrap !important;		
+    width: 80px !important;	
+    text-align: center !important;	
+}
+drag_drop .container_drag,	 .container_drag {	
+    position: relative !important;	
+    height: 40px !important;	
+    width: 87px!important;		
+    background: #d5d5d5  !important;		
+    margin-right: 3px!important;		
+    font-size: 14px !important;			
+    margin-left: 5px !important;		
+}	
+drag_drop .container_drag:first-child,	.container_drag:first-child {	
+    margin-left: 0px!important;		
+} */
+.modalBtn.yesBtn,.formBtn.yesBtn {	
+	background-color: #e9594a !important;	
+	border: 0px none !important;	
+	box-shadow: 0px 0px 0px 0px !important;	
+	color: #fff;	
+}
+.dropdown-submenu .dropdown-menu li a,.dropdown-submenu > a{	
+	color: #000 !important;	
+}
+.dropdown-submenu .dropdown-menu li:hover a,.dropdown-submenu:hover > a{	
+	color: #fff !important;	
+}	
+.disableNavBtns{
+	color: #c3c3c3 !important;
+}
+.fill_in_section{
+    clear: left;
+    float: left;
+}
+form.fill_in_section button.fillinsubmit {
+    float: right;
+}
+.horizontal_bottom .nav-tabs{
+	background: aliceblue !important;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	click_tab .horizontal_bottom #myTab .nav-item >a >label span {
+		font-size: 120% !important;
+	}
+	click_tab .horizontal_bottom #myTab .nav-item >a  {
+		width: 165px !important;
+	}
+}
+@media screen and (max-width: 750px) {
+    #awrY9kQmiM2XxElS,#aA94yW2TjbZICwJH,#a5F3dAzf3rk0Hr6r{
+		padding:10px 15px !important;
+	}
+	click_tab .horizontal_bottom #myTab .nav-item a{
+		width: 25% !important;
+		height: auto !important;
+	}
+	click_tab .horizontal_bottom #myTab .nav-item >a >label span {
+		font-size: 21px !important;
+	}
+	#ayM6o8bUJlUaTcX0{
+		margin:-2px 0px !important;
+	}
+}
+@media screen and (max-width: 667px) {
+    #awrY9kQmiM2XxElS,#aA94yW2TjbZICwJH,#a5F3dAzf3rk0Hr6r{
+		padding:10px 15px !important;
+	}
+	click_tab .horizontal_bottom #myTab .nav-item a{
+		width: 25% !important;
+		height: auto !important;
+	}
+	click_tab .horizontal_bottom #myTab .nav-item >a >label span {
+		font-size: 120% !important;
+	}
+	#ayM6o8bUJlUaTcX0{
+		margin:-2px 0px !important;
+	}
+}
+/* Custom course Shell Css */
