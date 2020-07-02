@@ -1,5 +1,5 @@
 <mcq_widget_2>
-    <div class="visuallyhidden" tabindex="-1">This is an MCQ pattern.</div>
+    <div class="visuallyhidden" tabindex="-1" aria-hidden="true">This is an MCQ pattern.</div>
     <div class="animation_this word_count mcq">
         <form id={editor_id} class='mcq-widget' ref="main">
             <div class="question_mcq" id="mcq_form_{opts.widgetId}"></div>
@@ -445,8 +445,8 @@ this.on("mount", function () {
       });
       $(this).prop('disabled','disabled');
       setTimeout(function(){
-        $('.status_feedbackContent').attr('tabindex','0').focus();
-      },500);
+        $('.status_feedbackContent [tabindex="0"]').focus();
+      },1500);
       var selectedListArray = [];
       var correctAnswers = [];
       var showFeedbackSign = true;
