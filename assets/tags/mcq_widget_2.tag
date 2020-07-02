@@ -11,7 +11,7 @@
         <div class="clearfix">
             <!--  disabled  -->
             <button type="submit" style="text-transform:uppercase;" class="modalBtn yesBtn mcqSubmitAnswer  disabled" id="submit_mcqfeedback">Submit</button>
-            <span class="attemptover"></span>
+           <!-- <span class="attemptover"></span> -->
         </div>
     </div>
     <style>
