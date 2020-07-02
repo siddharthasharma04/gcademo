@@ -17,7 +17,7 @@
                     <label style="margin: 0;height: 50px;padding: 10px 0;font-size: 22px;" role="text"><span
                             tabindex="0">MODULE 1</span>
                     </label>
-                    <span
+                    <span aria-hidden="true"
                     style="position: absolute;height: 30px;width: 2px;background-color: #333;top: 10px;right: 10%;"></span>
                 </div>
 
@@ -30,14 +30,14 @@
                     <a href="#" role="button" class="btn help-btn" style="background-color: transparent;" aria-label="Help">
                         <img src="assets/images/icons/help.png" width='28' aria-hidden="true" alt="Home">
                     </a>
-                    <span
+                    <span aria-hidden="true"
                         style="display: inline-block;height: 50px;width: 2px;background-color: #efefef;vertical-align: middle;"></span>
                     <a href="#" role="button" class="btn trans-btn" style="background-color: transparent;"
                         aria-label="Transcript">
                         <img src="assets/images/icons/Transcript.png" width='22' aria-hidden="true"
                             alt="Transcript">
                     </a>
-                    <span
+                    <span aria-hidden="true"
                         style="display: inline-block;height: 50px;width: 2px;background-color: #efefef;vertical-align: middle;"></span>
                     <a href="#" role="button" class="btn exit-btn" style="background-color: transparent;" aria-label="Exit">
                         <img src="assets/images/icons/exit.png" width='25' aria-hidden="true" alt="Exit">
@@ -77,16 +77,16 @@
                             <button class="btn btn-icon mute-btn" aria-label="Mute"><img
                                     src="assets/images/icons/audio.png" class="audio-icon" alt="icon"
                                     aria-hidden="true"></button>
-                                    <span
+                                    <span aria-hidden="true"
                                     style="display: inline-block;height: 50px;width: 2px;background-color: #efefef;vertical-align: middle;margin-top: 5px;"></span>
                             <button class="btn btn-icon play-btn" aria-label="Play audio"><img
                                     src="assets/images/icons/play.png" width="25" class="play-icon" alt="icon"
                                     aria-hidden="true"></button>
-                                    <span
+                                    <span aria-hidden="true"
                                     style="display: inline-block;height: 50px;width: 2px;background-color: #efefef;vertical-align: middle;margin-top: 5px;"></span>
                             <button class="btn btn-icon replay-btn" aria-label="Replay Audio"><img
                                     src="assets/images/icons/replay.png" alt="icon" aria-hidden="true"></button>
-                                    <span
+                                    <span aria-hidden="true"
                                     style="display: inline-block;height: 50px;width: 2px;background-color: #efefef;vertical-align: middle;margin-top: 5px;"></span>
                         </div>
                         <div class="col-8 d-flex" style="justify-content: center;align-items: center;position: relative;">
@@ -97,7 +97,7 @@
                                         type="text/plain" />
                                 </audio>
                             </div>
-                            <span
+                            <span aria-hidden="true"
                             style="height: 50px;width: 2px;background-color: #efefef;vertical-align: middle;position: absolute;top: 7px;right: -1%;"></span>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                     <div class="row text-right">
                         <div class="ui-resizable col-6" id="awuz75YKWZQTTdEA">
                             <button_widget3 id="wa8C6mO9bJljPbpXS" class="ice_widget " style="display: inline-block;"> </button_widget3>
-                            <span
+                            <span aria-hidden="true"
                         style="height: 50px;width: 2px;background-color: #efefef;vertical-align: middle;float: right;margin-top: 8px;margin-right: -15px;"></span>
                         </div>
                         <div class="col-6" id="aLTo0hZP61Jwo77o">
@@ -145,6 +145,7 @@
            $('.play-btn').find("img").removeClass('pause-icon')
            $('.play-btn').find("img").addClass('play-icon')
            $('.play-btn').find("img").attr('src', play_btn_url);  
+           $('.play-btn').attr('aria-label', 'Play Audio');  
        }
            }, false);
            media.addEventListener("play", function(e) {
@@ -183,6 +184,7 @@
     if ($(this).find("img").hasClass('play-icon')) {
        $(this).find("img").attr('src','');
        $(this).find("img").attr('src', pause_btn_url);
+       $(this).attr('aria-label', 'Pause audio');
        audio_elem.get(0).play();
        $(this).find("img").removeClass('play-icon')
        $(this).find("img").addClass('pause-icon')
@@ -190,6 +192,7 @@
        $(this).find("img").attr('src','');
        $(this).find("img").attr('src', play_btn_url);            
        $(this).find("img").addClass('play-icon')
+       $(this).attr('aria-label', 'Play audio');
        $(this).find("img").removeClass('pause-icon')
        audio_elem.get(0).pause();
    }

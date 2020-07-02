@@ -210,6 +210,7 @@
         
         #option_mcq .option {
             padding: 5px 0px 5px 5px;
+            cursor:pointer;
             border: 1px solid transparent;
           /*  margin: 10px 0;*/
             border-radius: 0;
@@ -405,11 +406,11 @@ this.on("mount", function () {
       if (assessment.getAssessment() != 2) {
         var checked = $("#option_mcq input[type=checkbox]:checked").length;
 
-        if (checked > 1) {
+        //if (checked > 1) {
           $(this).parent().parent().parent().find('.modalBtn.yesBtn').removeClass('disabled');
-        } else {
-          $(this).parent().parent().parent().find('.modalBtn.yesBtn').addClass('disabled');
-        }
+       // } else {
+          //$(this).parent().parent().parent().find('.modalBtn.yesBtn').addClass('disabled');
+        //}
       } // select single radioButton
 
 
@@ -429,7 +430,14 @@ this.on("mount", function () {
     var totalTryCount = 0;
     opts.settings.isFeedbackAdded = true;
     $("#" + opts.widgetId).off("click").on("click", ".mcqSubmitAnswer", function (e) {
-
+      var audio = $('.play-btn');
+      if(audio.length){
+        audio.each(function(i,v){
+          if($(v).find('img').hasClass('pause-icon')){
+            v.click()
+          }
+          })
+      }
       $(this).prop('disabled','disabled');
       window.tabingItems = $('[tabindex="0"]:visible,button:visible,a:visible');
       window.tabingItems.each(function(i,v){
@@ -482,7 +490,11 @@ this.on("mount", function () {
         }
         totalTryCount++;
       } else if (correctCount > 0) {
-        isCorrect = true;
+        if(opts.settings.correct_answer.length== correctCount){
+          isCorrect = true;
+        }else{
+        isCorrect = false;
+        }
       } else if (incorrectCount > 0) {
         totalTryCount++;
       }
@@ -490,6 +502,7 @@ this.on("mount", function () {
       if (correctCount > 0 && opts.settings.correct_answer.length != correctCount && totalTryCount + 1 != opts.settings.Total_attempt) {
         if (showFeedbackSign == true) {
           partially = true;
+          
         }
 
         isCorrect = false;
@@ -618,11 +631,22 @@ this.on("mount", function () {
               }
             });
           }
-        } else if (isCorrect === false && !partially) {
-          $parent.find('.mcqSubmitAnswer').text('Try Again').addClass('tryAgainBnt').addClass('disabled');
+        } 
+        else if (isCorrect === false && !partially) {
+          //debugger;
+          //$parent.find('.mcqSubmitAnswer').text('Try Again').addClass('tryAgainBnt').addClass('disabled');
+          $parent.find('#option_mcq .option').addClass('cursor-not-allowed');
+          $parent.find('.options .option').each(function (index, item) {
+              if ($(this).find("input").attr("data-correct") == 'true') {
+                $(this).find("input").parent().addClass('bgcolorcorrect').removeClass('bgcolorincorrect');
+              } else if ($(this).find("input").attr("data-correct") == 'false') {
+                $(this).find("input").parent().addClass('bgcolorincorrect').removeClass('bgcolorcorrect');
+              }
+            });
           setIncurrectAnswer('Incorrect', isCorrect,false,opts.settings.globalIncorrect);
+          
         } else if (isCorrect === false && partially) {
-          $parent.find('.mcqSubmitAnswer').text('Try Again').addClass('tryAgainBnt').addClass('disabled');
+          //$parent.find('.mcqSubmitAnswer').text('Try Again').addClass('tryAgainBnt').addClass('disabled');
           setIncurrectAnswer("Partially correct! Try again!", isCorrect,false,opts.settings.globalPartcorrect);
         }
       } else if (!isRadioButton) {
