@@ -10,7 +10,7 @@
         </form>
         <div class="clearfix">
             <!--  disabled  -->
-            <button type="submit" style="text-transform:uppercase;" class="modalBtn yesBtn mcqSubmitAnswer  disabled" id="submit_mcqfeedback">Submit</button>
+            <button type="submit" style="text-transform:uppercase;" class="modalBtn yesBtn mcqSubmitAnswer  disabled" id="submit_mcqfeedback" disabled="disabled">Submit</button>
            <!-- <span class="attemptover"></span> -->
         </div>
     </div>
@@ -407,7 +407,7 @@ this.on("mount", function () {
         var checked = $("#option_mcq input[type=checkbox]:checked").length;
 
         //if (checked > 1) {
-          $(this).parent().parent().parent().find('.modalBtn.yesBtn').removeClass('disabled');
+          $(this).parent().parent().parent().find('.modalBtn.yesBtn').removeClass('disabled').removeAttr('disabled');
        // } else {
           //$(this).parent().parent().parent().find('.modalBtn.yesBtn').addClass('disabled');
         //}
@@ -419,7 +419,7 @@ this.on("mount", function () {
           var radio = $("#option_mcq input[type=radio]:checked").length;
 
           if (radio > 0) {
-            $(this).parent().parent().parent().find('.modalBtn.yesBtn').removeClass('disabled');
+            $(this).parent().parent().parent().find('.modalBtn.yesBtn').removeClass('disabled').removeAttr('disabled');
           }
         }
       }
@@ -549,7 +549,7 @@ this.on("mount", function () {
             setIncurrectAnswer('Incorrect', isCorrect,false,opts.settings.globalIncorrect);
             $parent.find(".option").removeClass("radioSelected");
             $parent.find("input").prop("checked", false);
-            $parent.find('.mcqSubmitAnswer').text('Try Again').addClass('tryAgainBnt').addClass('disabled');
+            $parent.find('.mcqSubmitAnswer').text('Try Again').addClass('tryAgainBnt').addClass('disabled').attr('disabled','disabled');
           }
         }
       } else if (isRadioButton) {
@@ -803,6 +803,7 @@ function setCurrectAnswer(message, isCorrect, attamptover, content) {
     if(window.tabingItems && window.tabingItems.length){
       
       window.tabingItems.each(function(i,v){
+         if(!$(v).is('[disabled]'))
         $(v).attr('tabindex','0');
         if($(v).is('.mcqSubmitAnswer')){
            (function(okha){setTimeout(function(){
@@ -838,9 +839,11 @@ function setIncurrectAnswer(message, isCorrect, attamptover, content) {
     if(window.tabingItems && window.tabingItems.length){
       
       window.tabingItems.each(function(i,v){
+      if(!$(v).is('[disabled]'))
         $(v).attr('tabindex','0');
          if($(v).is('.mcqSubmitAnswer')){
           (function(okha){setTimeout(function(){
+           
             $(window.tabingItems[okha]).focus();
           },50)})(i+1)
         }

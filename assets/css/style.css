@@ -10511,3 +10511,8 @@ button.btn.btn-icon img {
 outline: 2px solid rgb(111, 190, 255);
 outline-offset: 2px;
 }
+
+
+.disabled{
+    pointer-events: none !important;
+}
